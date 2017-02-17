@@ -10,12 +10,12 @@ Font license info
    Homepage:  http://www.mfglabs.com/
 
 
-## Typicons
+## Elusive
 
-   (c) Stephen Hutchings 2012
+   Copyright (C) 2013 by Aristeides Stathopoulos
 
-   Author:    Stephen Hutchings
+   Author:    Aristeides Stathopoulos
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://typicons.com/
+   Homepage:  http://aristeides.com/
 
 

@@ -22,6 +22,18 @@
     a:focus {
         color: #2196f3;
     }
+    
+    .form-control-feedback {
+        width: 20px;
+    }
+    
+    .has-error .form-control-feedback {
+        color: #bb4141;
+    }
+    
+    .has-success .form-control-feedback {
+        color: #43bb41;
+    }
     /* Slider */
     
     .mlt-carousel {

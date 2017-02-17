@@ -18,6 +18,15 @@
             font-weight: normal;
         }
         
+        .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+        .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+            text-transform: uppercase
+        }
+        
+        .has-feedback label~.form-control-feedback {
+            top: 15px;
+        }
+        
         .mdl-textfield {
             width: 100%;
         }
@@ -117,13 +126,19 @@
                         <div class="tab-pane fade in active" id="register">
                             <!--register form-->
 
-                            <form>
+                            <form form data-feedback='{"success": "fa-check", "error": "fa-times"}'>
                                 <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right ">
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
-                                        <input class="mdl-textfield__input " type="text " id="fullName ">
-                                        <label class="mdl-textfield__label " for="fullName ">Full Name</label>
-                                    </div>
 
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group has-feedback">
+                                        <input type="text" name="fname" id="fname" class="mdl-textfield__input" />
+                                        <label class="mdl-textfield__label " for="fullName ">Full Name</label>
+                                        <span class="form-control-feedback" aria-hidden="true" id="fname1"></span>
+                                    </div>
+                                    <!--
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input " type="text" id="fullName ">
+                                        <label class="mdl-textfield__label " for="fullName ">Full Name</label>
+                                    </div>-->
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
                                         <input class="mdl-textfield__input " type="text " id="emailAddress ">
                                         <label class="mdl-textfield__label " for="emailAddress ">Email Address</label>
@@ -207,9 +222,13 @@
 
 
 
+
+
+
     <script src="node_modules/jquery/dist/jquery.min.js "></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="libs/mdl/material.min.js "></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js "></script>
 
     <script>
         //Google analytics.
@@ -227,6 +246,29 @@
 
         ga('create', 'UA-79865537-1', 'auto');
         ga('send', 'pageview');
+    </script>
+
+    <script>
+        //Form validation.
+        $('form').validate({
+            rules: {
+                fname: {
+                    minlength: 3,
+                    maxlength: 15,
+                }
+            },
+            errorPlacement: function(error, element) {},
+            highlight: function(element) {
+                var id_attr = "#" + $(element).attr("id") + "1";
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                $(id_attr).removeClass('icon-ok-circled2').addClass('icon-cancel-circled2');
+            },
+            unhighlight: function(element) {
+                var id_attr = "#" + $(element).attr("id") + "1";
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                $(id_attr).removeClass('icon-cancel-circled2').addClass('icon-ok-circled2');
+            },
+        });
     </script>
 
 </body>

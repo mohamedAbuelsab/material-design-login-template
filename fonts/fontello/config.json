@@ -13,16 +13,16 @@
       "src": "mfglabs"
     },
     {
-      "uid": "86bc84e014767f8f1377723c47d1b153",
-      "css": "right-outline",
-      "code": 59400,
-      "src": "typicons"
+      "uid": "56b0141d7bbb0717fc6246ea145bc0bd",
+      "css": "ok-circled2",
+      "code": 59393,
+      "src": "elusive"
     },
     {
-      "uid": "877a233d7fdca8a1d82615b96ed0d7a2",
-      "css": "right-small",
-      "code": 59393,
-      "src": "typicons"
+      "uid": "74415da8e36ed0afcea9b2b1454f4176",
+      "css": "cancel-circled2",
+      "code": 59395,
+      "src": "elusive"
     }
   ]
 }
